@@ -19,7 +19,7 @@ export default defineComponent({
 
 <template>
   <section>
-    <strong class="has-text-black">
+    <strong class="has-text-white">
       {{ currentTime }}
     </strong>
   </section>

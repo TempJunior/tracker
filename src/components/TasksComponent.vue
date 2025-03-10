@@ -16,7 +16,7 @@ export default defineComponent({
     </div>
 
     <div class="column">
-      <StopWatch timeInSeconds="15"/>
+      <StopWatch timeInSeconds="15" class="has-text-black"/>
     </div>
   </div>
 </div>
