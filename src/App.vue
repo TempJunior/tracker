@@ -6,10 +6,14 @@
     </div>
 
     <div class="column is-three-quarters">
-      <FormComponent/>
+      <FormComponent @onSaveTask="saveTask" />
 
       <div class="lista">
-        <TasksComponent/>
+        <TasksComponent
+        v-for="(task, index) in tasks"
+        :key="index"
+        :task="task"
+        />
       </div>
     </div>
   </main>
@@ -20,10 +24,26 @@ import {defineComponent} from 'vue';
 import LateralNavBar from "@/components/LateralNavBar.vue";
 import FormComponent from "@/components/FormComponent.vue";
 import TasksComponent from "@/components/TasksComponent.vue";
+import ITask from "@/interfaces/ITask";
 
 export default defineComponent({
   name: 'App',
-  components: {TasksComponent, FormComponent, LateralNavBar},
+  components: {
+    TasksComponent,
+    FormComponent,
+    LateralNavBar
+  },
+
+  data(){
+    return {
+      tasks: [] as ITask[]
+    }
+  },
+  methods: {
+    saveTask(task: ITask){
+      this.tasks.push(task);
+    }
+  }
 })
 </script>
 

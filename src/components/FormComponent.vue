@@ -7,6 +7,8 @@ export default defineComponent({
   components: {
     TimerComponent
   },
+  emits: ['onSaveTask'],
+
   data(){
     return {
       description: ''
@@ -14,10 +16,11 @@ export default defineComponent({
   },
   methods: {
     finishTask(currentTime: number): void {
-      console.log(currentTime);
-      console.log(this.description);
+      this.$emit('onSaveTask', {durationInSeconds: currentTime,
+      description: this.description});
+      console.log(currentTime, this.description);
       this.description = '';
-    }
+    },
   }
 })
 </script>
