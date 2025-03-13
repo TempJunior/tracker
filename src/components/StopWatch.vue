@@ -19,8 +19,15 @@ export default defineComponent({
 
 <template>
   <section>
-    <strong class="has-text-white">
+    <strong class="display has-text-white">
       {{ currentTime }}
     </strong>
   </section>
 </template>
+
+<style scoped>
+.display{
+  color: var(--text-primary);
+
+}
+</style>
